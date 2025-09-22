@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>oneToOne 관계매핑 연습</title>
+</head>
+<body>
+  <div align="center">
+    <h3>JPA 데이터베이스 @OneToOne 공유키 양방향 관계 매핑</h3>
+    <h2>Product</h2>
+    <table border="1" cellpadding="10">
+      <tr>
+        <th>아이디</th>
+        <th>제품명</th>
+        <th>가  격</th>
+      </tr>
+      <tr th:each="product : ${productList}">
+        <td th:text="${product.id}"></td>
+        <td th:text="${product.name}"></td>
+        <td th:text="${product.price}"></td>
+      </tr>
+    </table>
+    <br>
+    <h2>Detail</h2>
+    <table border="1" cellpadding="10">
+      <tr>
+        <th>아이디</th>
+        <th>설명</th>
+        <th>무게</th>
+        <th>너비</th>
+        <th>높이</th>
+      </tr>
+      <tr th:each="detail : ${detailList}">
+        <td th:text="${detail.id}"></td>
+        <td th:text="${detail.description}"></td>
+        <td th:text="${detail.weight}"></td>
+        <td th:text="${detail.width}"></td>
+        <td th:text="${detail.height}"></td>
+      </tr>
+    </table>
+  </div>
+</body>
+</html>

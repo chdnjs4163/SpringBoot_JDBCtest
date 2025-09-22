@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>oneToOne 관계매핑 연습</title>
+</head>
+<body>
+<div align="center">
+  <h3>JPA 데이터베이스 @ManyToOne 관계 매핑</h3>
+  <h2>Player</h2>
+  <table border="1" cellpadding="10">
+    <tr>
+      <th>아이디</th>
+      <th>선수명</th>
+    </tr>
+    <tr th:each="player : ${playerList}">
+      <td th:text="${player.id}"></td>
+      <td th:text="${player.name}"></td> </tr>
+  </table>
+  <br>
+  <h2>Team</h2>
+  <table border="1" cellpadding="10">
+    <tr>
+      <th>아이디</th>
+      <th>팀이름</th>
+    </tr>
+    <tr th:each="team  : ${teamList}">
+      <td th:text="${team.id}"></td>
+      <td th:text="${team.name}"></td>
+    </tr>
+  </table>
+</div>
+</body>
+</html>
